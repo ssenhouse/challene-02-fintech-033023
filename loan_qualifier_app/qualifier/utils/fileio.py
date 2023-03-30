@@ -28,13 +28,30 @@ def load_csv(csvpath):
         for row in csvreader:
             data.append(row)
     return data
-
+   
 # This function creates a csv output file for the loans
 
-output_csvpath = Path("qualifiying_loans.csv")
+# name of the cvs output csv file
+output_csvpath = Path("./loan_qualifier_app/data/qualifiying_loans.csv")
+
+#header names for csv file
+output_header = ['Lender','Max Loan Amount','Max LTV','Max DTI','Min Credit Score','Interest Rate']
+
+# Commented Out for Debugging
+#output list to csv file
 def save_csv(output_csvpath):
+    
     with open(output_csvpath, "w") as output_csvfile:
+        output_data =[]
         csvwriter = csv.writer(output_csvfile, delimiter=",")
+        csvwriter = csv.writerow(output_header)
+
+        for row in csvwriter:
+            output_data.append(row)
+    return output_data
+
+
+      
 
 
 
