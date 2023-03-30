@@ -30,8 +30,8 @@ def load_bank_data():
     Returns:
         The bank data from the data rate sheet CSV file.
     """
-
-    csvpath = questionary.text("Enter a file path to a rate-sheet (.csv):").ask()
+    csvpath = Path("./loan_qualifier_app/data/daily_rate_sheet.csv")
+    # csvpath = questionary.text("Enter a file path to a rate-sheet (.csv):").ask()
     csvpath = Path(csvpath)
     if not csvpath.exists():
         sys.exit(f"Oops! Can't find this path: {csvpath}")
@@ -46,18 +46,23 @@ def get_applicant_info():
         Returns the applicant's financial information.
     """
 
-    credit_score = questionary.text("What's your credit score?").ask()
-    debt = questionary.text("What's your current amount of monthly debt?").ask()
-    income = questionary.text("What's your total monthly income?").ask()
-    loan_amount = questionary.text("What's your desired loan amount?").ask()
-    home_value = questionary.text("What's your home value?").ask()
+    #credit_score = questionary.text("What's your credit score?").ask()
+    #debt = questionary.text("What's your current amount of monthly debt?").ask()
+    #income = questionary.text("What's your total monthly income?").ask()
+    #loan_amount = questionary.text("What's your desired loan amount?").ask()
+    #home_value = questionary.text("What's your home value?").ask()
 
-    credit_score = int(credit_score)
-    debt = float(debt)
-    income = float(income)
-    loan_amount = float(loan_amount)
-    home_value = float(home_value)
+    #credit_score = int(credit_score)
+    #debt = float(debt)
+    #income = float(income)
+    #loan_amount = float(loan_amount)
+    #home_value = float(home_value)
 
+    credit_score = 750
+    debt = 5000
+    income = 20000
+    loan_amount = 100000
+    home_value = 210000
     return credit_score, debt, income, loan_amount, home_value
 
 
@@ -101,7 +106,6 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
     return bank_data_filtered
 
-
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
 
@@ -110,7 +114,11 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
+  
+    
 
+
+    ""
 
 def run():
     """The main function for running the script."""
