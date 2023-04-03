@@ -32,7 +32,8 @@ def load_bank_data():
     Returns:
         The bank data from the data rate sheet CSV file.
     """
-    csvpath = Path("./loan_qualifier_app/data/daily_rate_sheet.csv")
+    # Fixed the variable csvpath to the folder location for the data sheet for testing
+    csvpath = Path("/loan_qualifier_app/data/daily_rate_sheet.csv")
     # csvpath = questionary.text("Enter a file path to a rate-sheet (.csv):").ask()
     csvpath = Path(csvpath)
     if not csvpath.exists():
@@ -115,11 +116,10 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
-    output_csvpath = qualifying_loans
-    return save_csv(output_csvpath)
-  
+    csvpath = questionary.text ("Please enter a filepath for the saved data: (qualifying_loans.csv)").ask
+    save_csv(Path(csvpath),qualifying_loans)
 
-    
+      
 
 def run():
     """The main function for running the script."""
