@@ -1,0 +1,50 @@
+  327  ls
+  328  cd FinTech-Workspace
+  329  ls
+  330  cd challenge-02-fintech-033023
+  331  ls
+  332  cd loan_qualifier_app
+  333  ls
+  334  conda activate dev
+  335  python app.py
+  336  clear
+  337  git status
+  338  git add -A
+  339  git commit -m "Updated save_qualifying loans function"
+  340  exit
+  341  ls
+  342  cd C:
+  343  ls
+  344  cd FinTech-Workspace
+  345  cd FinTech-Workspace_root
+  346  ls
+  347  cd loan_qualifier_app
+  348  ls
+  349  conda activate dev
+  350  python app.py
+  351  python app.py
+  352  python app.py
+  353  python app.py
+  354  ls
+  355  cd data
+  356  ls
+  357  cd ..
+  358  ls
+  359  pwd
+  360  exit
+  361  cd onedrive/desktop/FinTech-Workspace
+  362  ls
+  363  cd challenge-02-fintech-033023
+  364  ls
+  365  git status
+  366  git add -A
+  367  git status
+  368  git commit -m "Final version of app.py working"
+  369  git push
+  370  ls
+  371  cd loan_qualifier_app
+  372  ls
+  373  conda activate dev
+  374  python app.py
+  375  cd ..
+  376  history 50 > terminal_history.txt
