@@ -1,0 +1,8 @@
+C:\Users\seans\OneDrive\Desktop\FinTech-Workspace\challenge-02-fintech-033023\loan_qualifier_app\data
+
+
+File path on c drive to test loan input
+C:\FinTech-Workspace_root\loan_qualifier_app\data\daily_rate_sheet.csv
+
+File path on c drive to test loan output
+C:\FinTech-Workspace_root\loan_qualifier_app\data\qualifying_loans.csv

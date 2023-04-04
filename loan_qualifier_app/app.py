@@ -7,7 +7,6 @@ Example:
     $ python app.py
 """
 import sys
-import csv
 import fire
 import questionary
 from pathlib import Path
@@ -33,8 +32,8 @@ def load_bank_data():
         The bank data from the data rate sheet CSV file.
     """
     # Fixed the variable csvpath to the folder location for the data sheet for testing
-    csvpath = Path(".\loan_qualifier_app\data\daily_rate_sheet.csv")
-    # csvpath = questionary.text("Enter a file path to a rate-sheet (.csv):").ask()
+    # csvpath = Path("\data\daily_rate_sheet.csv")
+    csvpath = questionary.text("Enter a file path to a rate-sheet (.csv):").ask()
     csvpath = Path(csvpath)
     if not csvpath.exists():
         sys.exit(f"Oops! Can't find this path: {csvpath}")
@@ -49,23 +48,24 @@ def get_applicant_info():
         Returns the applicant's financial information.
     """
 
-    #credit_score = questionary.text("What's your credit score?").ask()
-    #debt = questionary.text("What's your current amount of monthly debt?").ask()
-    #income = questionary.text("What's your total monthly income?").ask()
-    #loan_amount = questionary.text("What's your desired loan amount?").ask()
-    #home_value = questionary.text("What's your home value?").ask()
+    credit_score = questionary.text("What's your credit score?").ask()
+    debt = questionary.text("What's your current amount of monthly debt?").ask()
+    income = questionary.text("What's your total monthly income?").ask()
+    loan_amount = questionary.text("What's your desired loan amount?").ask()
+    home_value = questionary.text("What's your home value?").ask()
 
-    #credit_score = int(credit_score)
-    #debt = float(debt)
-    #income = float(income)
-    #loan_amount = float(loan_amount)
-    #home_value = float(home_value)
+    credit_score = int(credit_score)
+    debt = float(debt)
+    income = float(income)
+    loan_amount = float(loan_amount)
+    home_value = float(home_value)
 
-    credit_score = 750
-    debt = 5000
-    income = 20000
-    loan_amount = 100000
-    home_value = 210000
+# sample input to test the file
+    #credit_score = 750
+    #debt = 5000
+    #income = 20000
+    #loan_amount = 100000
+    #home_value = 210000
     return credit_score, debt, income, loan_amount, home_value
 
 
@@ -122,7 +122,9 @@ def save_qualifying_loans(qualifying_loans):
     saveFile = questionary.confirm("Would you like to save the qualifying loans?").ask()
 
     if saveFile:
+      
         csvpath = questionary.text("Please enter a filepath for the saved data: (qualifying_loans.csv)").ask()
+        print(f"Your file is being saved at: {csvpath}")
         save_csv(Path(csvpath), qualifying_loans)
 
 
